@@ -19,6 +19,7 @@ exports.Authrization = (req, res, next) => {
         }
         const decode = jwt.verify(token, process.env.SECRET);
         req.user = decode
+        console.log(req.user)
         next()
     } catch (error) {
         if (error instanceof jwt.TokenExpiredError) {

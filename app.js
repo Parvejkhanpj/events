@@ -24,9 +24,11 @@ mongoose
 
   // router 
   const UserRouter = require('./routes/user')
+  const EventRoutes = require('./routes/event')
 
 
   app.use('/api', UserRouter)
+  app.use('/api', EventRoutes)
 
 
   process.on("unhandled-rejection", (err) => {

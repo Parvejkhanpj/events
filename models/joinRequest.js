@@ -9,8 +9,11 @@ const joinRequestSchema = new mongoose.Schema({
     enum: ["pending", "accepted", "rejected"],
     default: "pending",
   },
+  message:{
+    type:String
+  }
 });
 
 const JoinRequest = mongoose.model("JoinRequest", joinRequestSchema);
 
-module.exports = JoinRequest;
+module.exports = {JoinRequest};
