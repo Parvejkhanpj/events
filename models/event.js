@@ -1,13 +1,15 @@
 const mongoose = require("mongoose");
 
 const eventSchema = new mongoose.Schema({
-  eventName: { type: String, required: true },
-  eventType: { type: String, required: true },
-  eventDateTime: { type: Date, required: true },
-  eventLocation: { type: String, required: true },
-  eventLimit: { type: Number, required: true },
-  eventOrganizer: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-  players: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+  name:{type: String},
+  sport:{type: String},
+  organizer:{ type: mongoose.Schema.Types.ObjectId, ref: "User"},
+ start_time:{type: Date},
+ end_Time:{type: Date},
+ max_playeres: {type:Number},
+ joined_playes:[{ type: mongoose.Schema.Types.ObjectId, ref: "User"}],
+ is_user_joined:{type: Boolean}
+
 });
 
 const Event = mongoose.model('Event', eventSchema);
